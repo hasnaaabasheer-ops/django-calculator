@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Django Calculator</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .calculator {
+            width: 320px;
+        }
+
+        .btn {
+            height: 60px;
+            font-size: 20px;
+        }
+
+        .equal-btn {
+            height: 124px;
+            font-size: 20px;
+        }
+
+        .display {
+            height: 65px;
+            font-size: 28px;
+        }
+    </style>
+
+</head>
+
+
+<body class="bg-light">
+
+
+    <!-- Account -->
+
+
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{% url 'logout' %}" class="btn btn-dark px-4">
+            Logout
+        </a>
+    </div>
+
+
+    <!-- Calculator -->
+
+    <div class="d-flex justify-content-center align-items-center vh-100">
+
+        <div class="card p-3 shadow calculator">
+
+
+            <!-- Display -->
+
+            <div class="form-control text-end bg-dark text-success display mb-3">
+
+                {{ display }}
+
+            </div>
+
+
+            <!-- Calculator Form -->
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <!-- Row 1 -->
+
+                <div class="row g-2 mb-2">
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="C" class="btn btn-warning w-100">
+                            C
+                        </button>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="/" class="btn btn-warning w-100">
+                            ÷
+                        </button>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="*" class="btn btn-warning w-100">
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="back" class="btn btn-warning w-100">
+                            ←
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Row 2 -->
+
+                <div class="row g-2 mb-2">
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="7" class="btn btn-secondary w-100">
+                            7
+                        </button>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="8" class="btn btn-secondary w-100">
+                            8
+                        </button>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="9" class="btn btn-secondary w-100">
+                            9
+                        </button>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="-" class="btn btn-warning w-100">
+                            -
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Row 3 -->
+
+                <div class="row g-2 mb-2">
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="4" class="btn btn-secondary w-100">
+                            4
+                        </button>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="5" class="btn btn-secondary w-100">
+                            5
+                        </button>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="6" class="btn btn-secondary w-100">
+                            6
+                        </button>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <button type="submit" name="button" value="+" class="btn btn-warning w-100">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Rows 4 and 5 -->
+
+                <div class="row g-2">
+
+
+                    <!-- Numbers -->
+
+                    <div class="col-9">
+
+
+                        <!-- Row 4 -->
+
+                        <div class="row g-2 mb-2">
+
+                            <div class="col">
+
+                                <button type="submit" name="button" value="1" class="btn btn-secondary w-100">
+                                    1
+                                </button>
+
+                            </div>
+
+
+                            <div class="col">
+
+                                <button type="submit" name="button" value="2" class="btn btn-secondary w-100">
+                                    2
+                                </button>
+
+                            </div>
+
+
+                            <div class="col">
+
+                                <button type="submit" name="button" value="3" class="btn btn-secondary w-100">
+                                    3
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Row 5 -->
+
+                        <div class="row g-2">
+
+                            <div class="col-8">
+
+                                <button type="submit" name="button" value="0" class="btn btn-secondary w-100">
+                                    0
+                                </button>
+
+                            </div>
+
+
+                            <div class="col-4">
+
+                                <button type="submit" name="button" value="." class="btn btn-secondary w-100">
+                                    .
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Equal -->
+
+                    <div class="col-3">
+
+                        <button type="submit" name="button" value="=" class="btn btn-success w-100 equal-btn">
+                            =
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
