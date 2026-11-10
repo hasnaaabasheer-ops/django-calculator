@@ -1,0 +1,21 @@
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Django
+*.log
+
+# Database files and backups
+*.sqlite3
+backend/data_backup.json
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Environment files
+.env.*
+backend_original/
